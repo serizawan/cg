@@ -210,8 +210,7 @@ class Parser:
                 astronauts = [Astronaut(a_type, b_id) for a_type in astronaut_types]
                 landing_areas.append(LandingArea(b_id, int(b_x_str), int(b_y_str), astronauts))
 
-        Logger.log(
-            f"Month {n_month=} starts with: {n_resources=}, {tubes=}, {teleporters=}, {pods=}, {moon_modules=}, {landing_areas=}")
+        Logger.log(f"Month {n_month=} starts with: {n_resources=}, {tubes=}, {teleporters=}, {pods=}, {moon_modules=}, {landing_areas=}")
         return n_resources, tubes, teleporters, pods, landing_areas, moon_modules
 
 
@@ -263,13 +262,11 @@ class Game:
             else:
                 print(f"{Action.WAIT.value}")
 
-            Logger.log(
-                f"Month {n_month=} ends with: {n_resources=}, {tubes=}, {teleporters=}, {pods=}, {moon_modules=}, {landing_areas=}")
+            Logger.log(f"Month {n_month=} ends with: {n_resources=}, {tubes=}, {teleporters=}, {pods=}, {moon_modules=}, {landing_areas=}")
 
             # Next Month variables initiation
             n_month += 1
-            month_n_resources, month_tubes, month_teleporters, month_pods, month_landing_areas, month_moon_modules = Parser.parse(
-                n_month)
+            month_n_resources, month_tubes, month_teleporters, month_pods, month_landing_areas, month_moon_modules = Parser.parse(n_month)
 
             n_resources = month_n_resources
             assert len(tubes) == len(month_tubes)
