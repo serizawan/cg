@@ -199,6 +199,8 @@ class City:
 
     def extend_tube_network_as_star(self, from_buildings_queue, actions):
         n_star_extension_edges = 2
+        max_neighbor_checks = 20
+        max_tube_len = math.inf  # km
         if self.campus.is_connected():
             return
 
@@ -207,10 +209,13 @@ class City:
             closest_buildings = sorted(list(self.campus.buildings), key=lambda b: b.dist(from_building))[1:]  # Remove first building from the list as it is from_building
             added_extension = 0
             i = 0
-            while added_extension != n_star_extension_edges and i < len(closest_buildings):
+            while added_extension != n_star_extension_edges and i < len(closest_buildings[:max_neighbor_checks]):
                 next_closest_building = closest_buildings[i]
                 tube = Tube(from_building, next_closest_building)
                 if not next_closest_building.tos and self.is_allowed(tube) and self.n_resources >= tube.cost:
+                    if added_extension >= 1 and tube.length > max_tube_len:
+                        i += 1
+                        continue
                     self.n_resources = self.network.build_tube(tube, self.n_resources, actions)
                     from_building.tos.add(next_closest_building)
                     next_closest_building.tos.add(from_building)
