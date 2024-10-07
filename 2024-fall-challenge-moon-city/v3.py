@@ -3,6 +3,19 @@
 # Only after, if there are resources left, it builds pods (1 pod / astronaut type / landing area).
 # These pods do back and forth between landing area and the closest Moon Module with the corresponding astronaut type.
 # Score ~ 2.8M
+# Sample Score ~ 2.8M
+# Example 1 ~ 51k
+# Example 2 ~ 129k
+# Balancing ~ 170k
+# Crater Exploration ~ 180k
+# Pairs ~ 145k
+# Villages ~ 104k
+# Spiral ~ 423k
+# Grid ~ 307k
+# Expansion ~ 500k
+# Groups ~ 262k
+# Concentric Layers ~ 299k
+# Distribution Network ~ 224k
 from collections import deque
 from enum import Enum
 import math

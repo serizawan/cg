@@ -1,4 +1,18 @@
 # Welcome to my Selenia Optimization Tool. Let's build an eco-friendly city!
+# Score ~ ?
+# Sample Score ~ 2.7M
+# Example 1 ~ 51k
+# Example 2 ~ 99k
+# Balancing ~ 173k
+# Crater Exploration ~ 185k
+# Pairs ~ 152k
+# Villages ~ 72k
+# Spiral ~ 436k
+# Grid ~ 392k
+# Expansion ~ 508k
+# Groups ~ 353k
+# Concentric Layers ~ 244k
+# Distribution Network ~ 13k
 from collections import deque
 from enum import Enum
 import math

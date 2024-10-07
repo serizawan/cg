@@ -3,6 +3,19 @@
 # Only after, if there are resources left, it builds pods (1 pod / astronaut type / landing area).
 # These pods do back and forth between landing area and the closest Moon Module with the corresponding astronaut type.
 # Score ~ 3M
+# Sample Score ~ 2.6M
+# Example 1 ~ 53k
+# Example 2 ~ 106k
+# Balancing ~ 149k
+# Crater Exploration ~ 179k
+# Pair ~ 148k
+# Villages ~ 60k
+# Spiral ~ 357k
+# Grid ~ 337k
+# Expansion ~ 466k
+# Groups ~ 392k
+# Concentric Layers ~ 197k
+# Distribution Network ~ 201k
 from collections import deque
 from enum import Enum
 import math
@@ -200,7 +213,7 @@ class City:
     def extend_tube_network_as_star(self, from_buildings_queue, actions):
         n_star_extension_edges = 2
         max_neighbor_checks = 20
-        max_tube_len = math.inf  # km
+        max_tube_len = 30  # km
         if self.campus.is_connected():
             return
 
@@ -355,7 +368,7 @@ class Building(Item):
     def tos_ids(self):
         return {b.id for b in self.tos}
 
-    def find_itinerary_to_closest_typed_module(self, module_type, enable_tp, max_depth=10):
+    def find_itinerary_to_closest_typed_module(self, module_type, enable_tp, max_depth=15):
         queue = deque()
         queue.append((self, 0))
         visited = set()

@@ -1,6 +1,20 @@
 # Welcome to my Selenia Optimization Tool. Let's build an eco-friendly city!
 # v1 script builds a tube route loop and two pods that navigate clockwise and counter-clockwise.
 # This naïve solution only works for sample 1 and 2.
+# Score ~ N/A
+# Example 1 ~ 50k
+# Example 2 ~ 77k
+# Balancing ~ N/A
+# Crater Exploration ~ 121k
+# Pair ~ 2k
+# Villages ~ N/A
+# Spiral ~ N/A
+# Grid ~ N/A
+# Expansion ~ N/A
+# Groups ~ N/A
+# Concentric Layers ~ N/A
+# Distribution Network ~ N/A
+
 from enum import Enum
 import math
 import sys
